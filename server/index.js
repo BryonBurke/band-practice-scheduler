@@ -21,7 +21,14 @@ app.use("/api/members", memberRoutes)
 app.use("/api/practices", practiceRoutes)
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://zombie:bikePanel@threeohpractice.zvdzfvd.mongodb.net/band-practice-scheduler")
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://zombie:bikePanel@threeohpractice.zvdzfvd.mongodb.net/band-practice-scheduler?retryWrites=true&w=majority&maxPoolSize=10&serverSelectionTimeoutMS=30000", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 30000,
+  socketTimeoutMS: 45000,
+  bufferMaxEntries: 0,
+  bufferCommands: false
+})
   .then(() => {
     console.log("Connected to MongoDB")
   })
