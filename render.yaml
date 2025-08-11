@@ -1,0 +1,29 @@
+services:
+  # Backend API service
+  - type: web
+    name: band-scheduler-api
+    env: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm run server
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false  # Will be set manually in Render dashboard
+      - key: PORT
+        value: 10000
+    healthCheckPath: /
+    autoDeploy: true
+
+  # Frontend service
+  - type: web
+    name: band-scheduler-frontend
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://band-scheduler-api.onrender.com
+    autoDeploy: true

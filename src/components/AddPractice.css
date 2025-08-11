@@ -1,0 +1,197 @@
+.add-practice {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.practice-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.practice-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.practice-form .form-group label {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.practice-form .form-group input,
+.practice-form .form-group textarea {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-primary);
+}
+
+.practice-form .form-group input:focus,
+.practice-form .form-group textarea:focus {
+  background: white;
+  border-color: var(--primary-color);
+}
+
+.member-responses {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-responses h3 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.responses-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.member-response {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.member-name {
+  font-weight: 600;
+  color: white;
+  font-size: 1.125rem;
+}
+
+.member-instrument {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.response-controls {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.response-controls select {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.response-controls select:focus {
+  background: white;
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.response-controls input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.response-controls input:focus {
+  background: white;
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.practice-form .btn {
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .practice-form {
+    padding: 1.5rem;
+  }
+  
+  .response-controls {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .member-response {
+    padding: 1.25rem;
+  }
+  
+  .member-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-form {
+    padding: 1rem;
+  }
+  
+  .member-response {
+    padding: 1rem;
+  }
+}
